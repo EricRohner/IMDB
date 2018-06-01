@@ -1,0 +1,140 @@
+<!--Please note that my comments are not inline, They refer to the line below for formatting-->
+
+<!--Why should we use semantic notation for a form?-->
+<!--Semantic notation makes it easy to identify what's going on and address specific parts of the code while styling.-->
+<!--This makes collaboration between multiple developers easy as one may be doing the html while another styles-->
+
+<!--What are the benefits of everybody using similar semantic html?-->
+<!--Standardization is good. It lets you easily understand another person's code if you both use similar semantics.-->
+<!--It also allows for easy re-use of code in other projects later down the line.-->
+
+<!--What are some drawbacks of everybody using semantic tagging?-->
+<!--Like any standardization framework while semantic tagging helps to make things understandable it limits your overall number of choices-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href=https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css>
+    <style>
+        header, body {
+            display: flex;
+            justify-content: center;
+        }
+
+        article, header, footer {
+            border: solid black 2px;
+        }
+
+        main, form {
+            display: flex;
+        }
+
+        [id= search] {
+            display: flex;
+            flex-grow: 2;
+
+        }
+
+        [name= content] {
+            width: 50vw;
+            margin: 100px;
+            border: solid black 2px;
+        }
+
+    </style>
+</head>
+
+<!--Always put content in the body!-->
+<body>
+<!--This section delineates content to be centered on an ad in the background-->
+<section name="content">
+    <!--This is a navbar at the top, so... header-->
+    <header>
+        <a href="/">IMDB</a>
+        <form>
+        <input type="text" id="search" name="search" required minlength="2" required maxlength="30" placeholder="Find movies, etc">
+        <button type="submit" class="button-primary">Search</button>
+        </form>
+        <button type="button" class="button-primary">Twitter</button>
+        <button type="button" class="button-primary">Insta</button>
+    </header>
+    <!--This is the main content for our page, header and footer live outside of this-->
+    <main>
+        <!--I want a column of articles here, so I'm grouping them with a section-->
+        <section name="articles">
+            <!--These articles are self-contained and could be re-used on a click-bait website-->
+            <article>
+                <h2>This is an article</h2>
+                <ul>
+                    <li>yep</li>
+                    <li>def</li>
+                    <li>fo sho</li>
+                </ul>
+            </article>
+            <article>
+                <h2>This is another article</h2>
+                <ul>
+                    <li>yep</li>
+                    <li>def</li>
+                    <li>fo sho</li>
+                </ul>
+            </article>
+            <article>
+                <h2>This is a third article</h2>
+                <ul>
+                    <li>yep</li>
+                    <li>def</li>
+                    <li>fo sho</li>
+                </ul>
+            </article>
+            <article>
+                <h2>This is a fourth article</h2>
+                <ul>
+                    <li>yep</li>
+                    <li>def</li>
+                    <li>fo sho</li>
+                </ul>
+            </article>
+        </section>
+        <!--Section feels appropriate here again because I'm grouping together a large set of items to go all in one column-->
+        <section name="infoBoxes">
+            <!--Again, these are little re-usable blurbs, article feels appropriate-->
+            <article>
+                <h2>This is an ad</h2>
+            </article>
+            <article>
+                <h2>Opening this week</h2>
+                <ul>
+                    <li>Action Point</li>
+                    <li>Adrift</li>
+                    <li>Upgrade</li>
+                </ul>
+            </article>
+            <article>
+                <h2>Now Playing</h2>
+                <ul>
+                    <li>Solo: A Star Wars Story</li>
+                    <li>Deadpool 2</li>
+                    <li>Avengers: Infinity War</li>
+                    <li>Book club</li>
+                    <li>Life of the party</li>
+                </ul>
+            </article>
+            <article>
+                <h2>Coming Soon</h2>
+                <ul>
+                    <li>Ocean's 8</li>
+                    <li>Hereditary</li>
+                    <li>Won't you be my neighbor?</li>
+                    <li>Hearts Beat Loud</li>
+                </ul>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <h2>There is a footer here</h2>
+    </footer>
+</section>
+</body>
+</html>
